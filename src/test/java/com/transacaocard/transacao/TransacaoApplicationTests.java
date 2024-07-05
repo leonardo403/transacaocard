@@ -1,4 +1,4 @@
-package com.transacaocard.transacao.controller;
+package com.transacaocard.transacao;
 
 import com.example.transactionauthorizer.model.Transaction;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
+import org.junit.Assert;
+import org.junit.Test;
 import java.math.BigDecimal;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
