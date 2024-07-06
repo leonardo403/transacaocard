@@ -1,6 +1,6 @@
 package com.transacaocard.transacao.interface;
 
-import com.example.transactionauthorizer.model.Transaction;
+import com.transacaocard.transacao.model.Transaction;
 
 public interface TransactionService {
 
