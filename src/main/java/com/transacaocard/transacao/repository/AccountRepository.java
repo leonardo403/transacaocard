@@ -1,5 +1,6 @@
 package com.transacaocard.transacao.repository;
 
+import com.transacaocard.transacao.model.Account;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,5 +20,4 @@ public class AccountRepository {
     public void updateAccount(Account account) {
         accounts.put(account.getId(), account);
     }
-
 }

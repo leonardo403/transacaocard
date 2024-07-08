@@ -1,8 +1,11 @@
 package com.transacaocard.transacao.service;
 
-import com.transacaocard.transacao.interface.TransactionService as InterfaceTransactionService;
+import com.transacaocard.transacao.model.Transaction;
+import org.springframework.stereotype.Service;
 
-public class TransactionService implements InterfaceTransactionService {
+
+@Service
+public class TransactionService{
 
     private final AccountRepository accountRepository;
 
@@ -10,6 +13,7 @@ public class TransactionService implements InterfaceTransactionService {
         this.accountRepository = accountRepository;
     }
 
+    @Override
     public String authorizeTransaction(Transaction transaction) {
         Account account = accountRepository.findAccountById(transaction.getAccountId());
         if (account == null) {
@@ -19,9 +23,12 @@ public class TransactionService implements InterfaceTransactionService {
         double amount = transaction.getAmount();
         String mcc = transaction.getMcc();
         String merchant = transaction.getMerchant();
-
+        
+        /**
+         * substituição de MCC baseado no nome do comerciante
+         */
         if (merchant.contains("UBER EATS")) {
-            mcc = "5812"; // Exemplo de substituição de MCC baseado no nome do comerciante
+            mcc = "5812";
         }
 
         if ((mcc.equals("5411") || mcc.equals("5412")) && account.getFoodBalance() >= amount) {
@@ -37,5 +44,4 @@ public class TransactionService implements InterfaceTransactionService {
         accountRepository.updateAccount(account);
         return "{\"code\": \"00\"}";
     }
-}
 }
