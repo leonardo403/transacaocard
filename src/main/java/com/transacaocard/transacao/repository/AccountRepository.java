@@ -8,8 +8,10 @@ public class AccountRepository {
     
     private static Map<String, Account> accounts = new HashMap<>();
 
+    /**
+     * contas para testes
+     */
     static {
-        // Inicializa algumas contas para testes
         accounts.put("123", new Account("123", 200.00, 150.00, 500.00));
     }
 

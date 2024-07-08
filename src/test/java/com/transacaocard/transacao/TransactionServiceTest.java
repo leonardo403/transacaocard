@@ -1,5 +1,11 @@
 package com.transacaocard.transacao;
 
+
+import com.transacaocard.transacao.service.TransactionService;
+import com.transacaocard.transacao.repository.AccountRepository;
+import com.transacaocard.transacao.model.Account;
+import com.transacaocard.transacao.model.Transaction;
+
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
