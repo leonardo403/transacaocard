@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class AccountRepository {
     
+    @Autowired
     private static Map<String, Account> accounts = new HashMap<>();
 
     /**
